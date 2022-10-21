@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+    <link rel="stylesheet"  href="{%  static  'style.css'  %}">
+    <link rel="stylesheet" href= "static/css/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+</head>
+<body >
+
+    <!-- Navigation Bar-->
+   
+    <div class="sidebar">
+    
+        <div class="logo_content">
+          <div class ="logo">
+            <i class='bx bxs-bank'></i>
+          <div class="logo_name"> Results Portal</div>
+          </div>
+          <i class='bx bx-menu' id="btn"></i>
+        </div>
+        
+        <ul class="nav_list">
+         <li>
+                <a href="#Search">
+                <i class='bx bx-search'></i>
+                 <span class="links_name">Search </span>
+                </a>
+                 <span class="tooltips">Search </span>
+         </li>
+         <li>
+          <a href="#Sem_results">
+            <i class='bx bxs-graduation'></i>
+           <span class="links_name">Semester Results</span>
+          </a>
+           <span class="tooltips">Sem Results </span>
+         </li>
+    
+         <li>
+          <a href="#mid_results">
+            <i class='bx bx-file-blank'></i>
+           <span class="links_name">Mid Results</span>
+          </a>
+          <span class="tooltips"> Mid Results</span>
+         </li>
+         <li>
+          <a href="#dashboard">
+            <i class='bx bx-grid-alt'></i>
+           <span class="links_name">Dashboard</span>
+          </a>
+           <span class="tooltips"> Dashboard</span>
+         </li>
+         <li>
+          <a href="#Analysis">
+            <i class='bx bx-line-chart'></i>
+           <span class="links_name">Analysis</span>
+          </a>
+           <span class="tooltips"> Analysis</span>
+         </li>
+         <li>
+          <a href="update">
+            <i class='bx bx-expand-horizontal'></i>
+           <span class="links_name">Update Results</span>
+          </a>
+           <span class="tooltips">Update Results</span>
+         </li>
+         <li>
+          <a href="#">
+            <i class='bx bx-user-circle'></i>
+           <span class="links_name">Admin Page</span>
+          </a>
+           <span class="tooltips"> Admin Page</span>
+         </li>
+         <li>
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+           <span class="links_name">Logout</span>
+          </a>
+           <span class="tooltips"> Logout</span>
+         </li>
+       </ul>
+    </div>  
+
+
+     
+</div>
+
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar= document.querySelector(".sidebar");
+    let searchBtn= document.querySelector(".bx-search");
+    btn.onclick = function(){
+
+      sidebar.classList.toggle("active");
+
+    }
+    serachBtn.onclick=function(){
+
+  sidebar.classList.toggle("active");
+
+}
+
+</script> 
+{% block content %}
+{% endblock %}
+</body>
+</html>
+  

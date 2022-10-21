@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+    <link rel="stylesheet" href= "static/css/bootstrap.min.css">
+    <style>
+        body {
+        background-image: url('static/images/search.jpg');background-size:100% 100%;
+        background-repeat: no-repeat;
+          }
+        .background{
+
+            background:url("static/images/search.jpg");
+             background-size:100% 100%;
+             background-attachment: fixed;
+             background-size: cover;
+        }
+
+        .size{
+            height: 2cm;
+            width: 15cm;
+            
+
+        }
+
+        .semtable{
+            width:7cm;
+        }
+
+        .center {
+  margin-left: auto;
+  margin-right: auto;
+  width:70%
+   }
+   .hover {
+  color:white;
+  background-color:#00a6ff;
+  border: black;
+}
+
+.hover1 {
+  color:white;
+  background-color:#00ff84;
+  border: black;
+}
+
+</style>
+</head>
+<body >
+
+<div class="container my-4"></div>
+    {% for i in data|slice:":1" %}
+    {% for j in i|slice:":1" %}
+      
+    <div>
+        <h2 class ="text-center">Semister Result of {{j.Htno}} </h2>
+    </div>
+    
+    {% endfor %}
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-12">
+        {% for i in data %}
+        
+            
+            <div>
+            <h2 class ="text-center">Sem Number : {{forloop.counter}}</h2>
+        </div>
+
+             <table class="table table-sm center" style="width:70%">
+                <thead class="thead-dark">
+                    <tr class="table-light">
+                        
+                        <th>Subject name</th>
+                        <th>Grade </th>
+                        <th>credit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for j in i %}
+                    <tr class="table-light">
+                        
+                         <td>{{j.Subname}}</td>
+                         <td>{{j.Grade}}</td>
+                         <td>{{j.Credits}}</td>
+                         
+                    </tr>
+                    
+                    {% endfor %}
+
+            </tbody>
+            </table>
+        
+              {% endfor %}
+                  
+                
+    
+              <table class="table table-sm center semtable" style="width:70%">
+                <thead class="thead-dark">
+                    <tr class="table-light">
+                        
+                        <th>Semister Number</th>
+                        <th>SGPA </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, value in SGPA.items %}
+                    <tr class="table-light">
+                        
+                         <td>{{forloop.counter}}</td>
+                         <td>{{value}}</td>
+
+                         
+                    </tr>
+                    
+                    {% endfor %}
+  
+              </tbody>
+              </table>
+           
+            
+            {% for CGPA in CGPA %}
+            <div class="center hover1">
+                <h2 class ="text-center">CGPA : {{CGPA}}</h2>
+            </div>
+            {% endfor %}
+        </div>
+          
+    
+
+ 
+</div>
+</body>
+
+                   
+</html>
